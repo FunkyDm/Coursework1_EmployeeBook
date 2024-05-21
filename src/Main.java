@@ -15,23 +15,52 @@ public class Main {
         employee[8] = new Employee("Серьезный Семен Семенович", 2, 90_000);
         employee[9] = new Employee("Смоленцева Екатерина Александровна", 2, 90_000);
 
-        System.out.println("\nПроверяем метод printAllEmployeesInfo");
-        printAllEmployeesInfo();
-
-        System.out.println("\nПроверяем метод monthSalaryCosts");
-        System.out.println(monthSalaryCosts());
-
-        System.out.println("\nПроверяем метод searchEmployeeMaxSalary");
-        searchEmployeeMaxSalary();
-
-        System.out.println("\nПроверяем метод searchEmployeeMinSalary");
-        searchEmployeeMinSalary();
-
-        System.out.println("\nПроверяем метод searchEmployeeAverageSalary");
-        System.out.println(searchEmployeeAverageSalary());
-
-        System.out.println("\nПроверяем метод printAllEmployeesFullNames");
-        printAllEmployeesFullNames();
+//        System.out.println("\nПроверяем метод printAllEmployeesInfo");
+//        printAllEmployeesInfo();
+//
+//        System.out.println("\nПроверяем метод monthSalaryCosts");
+//        System.out.println(monthSalaryCosts());
+//
+//        System.out.println("\nПроверяем метод searchEmployeeMaxSalary");
+//        searchEmployeeMaxSalary();
+//
+//        System.out.println("\nПроверяем метод searchEmployeeMinSalary");
+//        searchEmployeeMinSalary();
+//
+//        System.out.println("\nПроверяем метод searchEmployeeAverageSalary");
+//        System.out.println(searchEmployeeAverageSalary());
+//
+//        System.out.println("\nПроверяем метод printAllEmployeesFullNames");
+//        printAllEmployeesFullNames();
+//
+//        System.out.println("\nПроверяем метод indexingSalary");
+//        indexingSalary(4);
+//        printAllEmployeesInfo();
+//
+//        System.out.println("\nПроверяем метод searchEmployeeDepMinSalary");
+//        searchEmployeeDepMinSalary(1);
+//
+//        System.out.println("\nПроверяем метод searchEmployeeDepMaxSalary");
+//        searchEmployeeDepMaxSalary(1);
+//
+//        System.out.println("\nПроверяем метод depMonthSalaryCosts");
+//        System.out.println(depMonthSalaryCosts(1));
+//
+//        System.out.println("\nПроверяем метод searchEmployeeDepAverageSalary");
+//        System.out.println(searchEmployeeDepAverageSalary(1));
+//
+//        System.out.println("\nПроверяем метод printAllDepEmployeesInfo");
+//        printAllDepEmployeesInfo(1);
+//
+//        System.out.println("\nПроверяем метод depIndexingSalary");
+//        depIndexingSalary(4,1);
+//        printAllDepEmployeesInfo(1);
+//
+//        System.out.println("\nПроверяем метод printEmployeesSalaryLessThenNum");
+//        printEmployeesSalaryLessThenNum(130000);
+//
+//        System.out.println("\nПроверяем метод printEmployeesSalaryHigherThenNum");
+//        printEmployeesSalaryHigherThenNum(60000);
 
     }
 
@@ -41,8 +70,8 @@ public class Main {
         }
     }
 
-    static int monthSalaryCosts() {
-        int sum = 0;
+    static double monthSalaryCosts() {
+        double sum = 0;
         for (int i = 0; i < employee.length; i++) {
             if (employee[i] != null) {
                 sum += employee[i].getEmployeeSalary();
@@ -79,6 +108,104 @@ public class Main {
         System.out.println("\nСписок всех ФИО сотрудников:");
         for (Employee value : employee) {
             System.out.println(value.getEmployeeName());
+        }
+    }
+
+    static void indexingSalary(double index){
+        index = (double) index / 100;
+        for (Employee value : employee) {
+            value.setEmployeeSalary(value.getEmployeeSalary() * (1 + index));
+        }
+    }
+
+    static void searchEmployeeDepMinSalary(int employeeDep){
+        Employee minSalaryEmployee = null;
+        for(Employee value : employee){
+            if(value.getEmployeeDepartment() == employeeDep){
+                minSalaryEmployee = value;
+                break;
+            }
+        }
+        for(Employee value : employee){
+            if(value.getEmployeeDepartment() == employeeDep && (minSalaryEmployee != null ? minSalaryEmployee.getEmployeeSalary() : 0) > value.getEmployeeSalary()){
+                minSalaryEmployee = value;
+            }
+        }
+        System.out.println("Данные сотрудника с минимальной зарплатой в отделе " + employeeDep + " :\n" + minSalaryEmployee);
+    }
+
+    static void searchEmployeeDepMaxSalary(int employeeDep){
+        Employee maxSalaryEmployee = null;
+        for(Employee value : employee){
+            if(value.getEmployeeDepartment() == employeeDep){
+                maxSalaryEmployee = value;
+                break;
+            }
+        }
+        for(Employee value : employee){
+            if(value.getEmployeeDepartment() == employeeDep && (maxSalaryEmployee != null ? maxSalaryEmployee.getEmployeeSalary() : 0) < value.getEmployeeSalary()){
+                maxSalaryEmployee = value;
+            }
+        }
+        System.out.println("Данные сотрудника с максимальной зарплатой в отделе " + employeeDep + " :\n" + maxSalaryEmployee);
+    }
+
+
+    static double depMonthSalaryCosts(int employeeDep) {
+        double sum = 0;
+        for (int i = 0; i < employee.length; i++) {
+            if (employee[i] != null && employee[i].getEmployeeDepartment() == employeeDep) {
+                sum += employee[i].getEmployeeSalary();
+            }
+        }
+        return sum;
+    }
+
+    static double searchEmployeeDepAverageSalary(int employeeDep) {
+        int depCount = 0;
+        for(Employee value : employee){
+            if(value.getEmployeeDepartment() == employeeDep){
+                depCount++;
+            }
+        }
+        if(depCount == 0){
+            throw new RuntimeException("В отделе нет людей");
+        }
+        else{
+            return (double) depMonthSalaryCosts(employeeDep) / depCount;
+        }
+    }
+
+    static void printAllDepEmployeesInfo(int employeeDep) {
+        for (Employee value : employee) {
+            if(value.getEmployeeDepartment() == employeeDep){
+                System.out.println("Id: " + value.getEmployeeId() + "\nФИО: " + value.getEmployeeName() + "\nЗарплата: " + value.getEmployeeSalary() + "\n");
+            }
+        }
+    }
+
+    static void depIndexingSalary(double index, int employeeDep){
+        index = (double) index / 100;
+        for (Employee value : employee) {
+            if(value.getEmployeeDepartment() == employeeDep){
+                value.setEmployeeSalary(value.getEmployeeSalary() * (1 + index));
+            }
+        }
+    }
+
+    static void printEmployeesSalaryLessThenNum(double num){
+        for(Employee value : employee){
+            if(value.getEmployeeSalary() < num){
+                System.out.println("Id: " + value.getEmployeeId() + "\nФИО: " + value.getEmployeeName() + "\nЗарплата: " + value.getEmployeeSalary() + "\n");
+            }
+        }
+    }
+
+    static void printEmployeesSalaryHigherThenNum(double num){
+        for(Employee value : employee){
+            if(value.getEmployeeSalary() > num){
+                System.out.println("Id: " + value.getEmployeeId() + "\nФИО: " + value.getEmployeeName() + "\nЗарплата: " + value.getEmployeeSalary() + "\n");
+            }
         }
     }
 
