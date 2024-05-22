@@ -72,9 +72,9 @@ public class Main {
 
     static double monthSalaryCosts() {
         double sum = 0;
-        for (int i = 0; i < employee.length; i++) {
-            if (employee[i] != null) {
-                sum += employee[i].getEmployeeSalary();
+        for (Employee value : employee) {
+            if (value != null) {
+                sum += value.getEmployeeSalary();
             }
         }
         return sum;
@@ -101,7 +101,7 @@ public class Main {
     }
 
     static double searchEmployeeAverageSalary() {
-        return (double) monthSalaryCosts() / employee.length;
+        return monthSalaryCosts() / employee.length;
     }
 
     static void printAllEmployeesFullNames() {
@@ -112,7 +112,7 @@ public class Main {
     }
 
     static void indexingSalary(double index){
-        index = (double) index / 100;
+        index = index / 100;
         for (Employee value : employee) {
             value.setEmployeeSalary(value.getEmployeeSalary() * (1 + index));
         }
@@ -153,9 +153,9 @@ public class Main {
 
     static double depMonthSalaryCosts(int employeeDep) {
         double sum = 0;
-        for (int i = 0; i < employee.length; i++) {
-            if (employee[i] != null && employee[i].getEmployeeDepartment() == employeeDep) {
-                sum += employee[i].getEmployeeSalary();
+        for (Employee value : employee) {
+            if (value != null && value.getEmployeeDepartment() == employeeDep) {
+                sum += value.getEmployeeSalary();
             }
         }
         return sum;
@@ -172,7 +172,7 @@ public class Main {
             throw new RuntimeException("В отделе нет людей");
         }
         else{
-            return (double) depMonthSalaryCosts(employeeDep) / depCount;
+            return depMonthSalaryCosts(employeeDep) / depCount;
         }
     }
 
@@ -185,7 +185,7 @@ public class Main {
     }
 
     static void depIndexingSalary(double index, int employeeDep){
-        index = (double) index / 100;
+        index = index / 100;
         for (Employee value : employee) {
             if(value.getEmployeeDepartment() == employeeDep){
                 value.setEmployeeSalary(value.getEmployeeSalary() * (1 + index));
