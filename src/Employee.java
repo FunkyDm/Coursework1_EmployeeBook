@@ -4,7 +4,7 @@ public class Employee {
 
     private int employeeDepartment;
 
-    private int employeeSalary;
+    private double employeeSalary;
 
     public static int idCounter = 1;
 
@@ -25,7 +25,7 @@ public class Employee {
         return employeeDepartment;
     }
 
-    public int getEmployeeSalary() {
+    public double getEmployeeSalary() {
         return employeeSalary;
     }
 
@@ -41,7 +41,7 @@ public class Employee {
         this.employeeDepartment = employeeDepartment;
     }
 
-    public void setEmployeeSalary(int employeeSalary) {
+    public void setEmployeeSalary(double employeeSalary) {
         if (employeeSalary <= 0) {
             System.out.println("Введите неотрицательное число больше нуля для зарплаты сотрудника.");
             return;
