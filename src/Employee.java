@@ -8,7 +8,7 @@ public class Employee {
 
     public static int idCounter = 1;
 
-    private final int employeeId;
+    private int employeeId;
 
     public Employee(String employeeName, int employeeDepartment, int employeeSalary) {
         this.employeeName = employeeName;
@@ -47,6 +47,10 @@ public class Employee {
             return;
         }
         this.employeeSalary = employeeSalary;
+    }
+
+    public void reduceIdByOne(Employee employee){
+        employee.employeeId--;
     }
 
     @Override
