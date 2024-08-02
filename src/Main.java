@@ -1,18 +1,19 @@
 public class Main {
 
     public static void main(String[] args) {
-        EmployeeBook employeeBook1 = new EmployeeBook(10);
+        Employee[] employees = new Employee[10];
+        EmployeeBook employeeBook1 = new EmployeeBook(employees);
 
-        employeeBook1.addEmployee(new Employee("Долгов Андрей Александрович", 1, 120_000));
-        employeeBook1.addEmployee(new Employee("Винтовой Станислав Алексеевич", 3, 50_000));
-        employeeBook1.addEmployee(new Employee("Лютых Александр Александрович", 1, 110_000));
-        employeeBook1.addEmployee(new Employee("Ивлев Павел Николаевич", 5, 140_000));
-        employeeBook1.addEmployee(new Employee("Максимов Сергей Анатольевич", 1, 120_000));
-        employeeBook1.addEmployee(new Employee("Шибаев Алексей Алексеевич", 3, 59_000));
-        employeeBook1.addEmployee(new Employee("Анисимов Аркадий Валерьвич", 4, 100_000));
-        employeeBook1.addEmployee(new Employee("Анисимов Константин Валерьевич", 4, 100_000));
-        employeeBook1.addEmployee(new Employee("Серьезный Семен Семенович", 2, 90_000));
-        employeeBook1.addEmployee(new Employee("Смоленцева Екатерина Александровна", 2, 90_000));
+        employeeBook1.addEmployee("Долгов Андрей Александрович", 1, 120_000);
+        employeeBook1.addEmployee("Винтовой Станислав Алексеевич", 3, 50_000);
+        employeeBook1.addEmployee("Лютых Александр Александрович", 1, 110_000);
+        employeeBook1.addEmployee("Ивлев Павел Николаевич", 5, 140_000);
+        employeeBook1.addEmployee("Максимов Сергей Анатольевич", 1, 120_000);
+        employeeBook1.addEmployee("Шибаев Алексей Алексеевич", 3, 59_000);
+        employeeBook1.addEmployee("Анисимов Аркадий Валерьвич", 4, 100_000);
+        employeeBook1.addEmployee("Анисимов Константин Валерьевич", 4, 100_000);
+        employeeBook1.addEmployee("Серьезный Семен Семенович", 2, 90_000);
+        employeeBook1.addEmployee("Смоленцева Екатерина Александровна", 2, 90_000);
 
         System.out.println("\nПроверяем метод printAllEmployeesInfo");
         employeeBook1.printAllEmployeesInfo();
@@ -31,16 +32,16 @@ public class Main {
         System.out.println("\nПроверяем метод printAllEmployeesInfo");
         employeeBook1.printAllEmployeesInfo();
 
-        employeeBook1.addEmployee(new Employee("Долгов Андрей Александрович", 1, 120_000));
-        employeeBook1.addEmployee(new Employee("Винтовой Станислав Алексеевич", 3, 50_000));
-        employeeBook1.addEmployee(new Employee("Лютых Александр Александрович", 1, 110_000));
-        employeeBook1.addEmployee(new Employee("Ивлев Павел Николаевич", 5, 140_000));
-        employeeBook1.addEmployee(new Employee("Максимов Сергей Анатольевич", 1, 120_000));
-        employeeBook1.addEmployee(new Employee("Шибаев Алексей Алексеевич", 3, 59_000));
-        employeeBook1.addEmployee(new Employee("Анисимов Аркадий Валерьвич", 4, 100_000));
-        employeeBook1.addEmployee(new Employee("Анисимов Константин Валерьевич", 4, 100_000));
-        employeeBook1.addEmployee(new Employee("Серьезный Семен Семенович", 2, 90_000));
-        employeeBook1.addEmployee(new Employee("Смоленцева Екатерина Александровна", 2, 90_000));
+        employeeBook1.addEmployee("Долгов Андрей Александрович", 1, 120_000);
+        employeeBook1.addEmployee("Винтовой Станислав Алексеевич", 3, 50_000);
+        employeeBook1.addEmployee("Лютых Александр Александрович", 1, 110_000);
+        employeeBook1.addEmployee("Ивлев Павел Николаевич", 5, 140_000);
+        employeeBook1.addEmployee("Максимов Сергей Анатольевич", 1, 120_000);
+        employeeBook1.addEmployee("Шибаев Алексей Алексеевич", 3, 59_000);
+        employeeBook1.addEmployee("Анисимов Аркадий Валерьвич", 4, 100_000);
+        employeeBook1.addEmployee("Анисимов Константин Валерьевич", 4, 100_000);
+        employeeBook1.addEmployee("Серьезный Семен Семенович", 2, 90_000);
+        employeeBook1.addEmployee("Смоленцева Екатерина Александровна", 2, 90_000);
 
         System.out.println("\nПроверяем метод printAllEmployeesInfo");
         employeeBook1.printAllEmployeesInfo();

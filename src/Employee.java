@@ -6,7 +6,7 @@ public class Employee {
 
     private double employeeSalary;
 
-    public static int idCounter = 1;
+    public static int idCounter = 0;
 
     private int employeeId;
 
@@ -14,7 +14,8 @@ public class Employee {
         this.employeeName = employeeName;
         this.employeeDepartment = employeeDepartment;
         this.employeeSalary = employeeSalary;
-        this.employeeId = idCounter++;
+        idCounter++;
+        this.employeeId = idCounter;
     }
 
     public String getEmployeeName() {
@@ -47,10 +48,6 @@ public class Employee {
             return;
         }
         this.employeeSalary = employeeSalary;
-    }
-
-    public void reduceIdByOne(Employee employee){
-        employee.employeeId--;
     }
 
     @Override
