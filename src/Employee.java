@@ -50,6 +50,10 @@ public class Employee {
         this.employeeSalary = employeeSalary;
     }
 
+    public void reduceIdByOne(){
+        idCounter--;
+    }
+
     @Override
     public String toString() {
         return "Id: " + employeeId + "\nФИО: " + employeeName + "\nОтдел: " + employeeDepartment + "\nЗарплата: " + employeeSalary + "\n";

@@ -18,6 +18,8 @@ public class Main {
         System.out.println("\nПроверяем метод printAllEmployeesInfo");
         employeeBook1.printAllEmployeesInfo();
 
+        System.out.println(employeeBook1.getEmployeeById(4));
+
         employeeBook1.removeEmployee(1);
         employeeBook1.removeEmployee(2);
         employeeBook1.removeEmployee(3);
@@ -46,36 +48,36 @@ public class Main {
         System.out.println("\nПроверяем метод printAllEmployeesInfo");
         employeeBook1.printAllEmployeesInfo();
 
-//        System.out.println("\nПроверяем метод monthSalaryCosts");
-//        System.out.println(employeeBook1.monthSalaryCosts());
-//        System.out.println("\nПроверяем метод searchEmployeeMaxSalary");
-//        employeeBook1.searchEmployeeMaxSalary();
-//        System.out.println("\nПроверяем метод searchEmployeeMinSalary");
-//        employeeBook1.searchEmployeeMinSalary();
-//        System.out.println("\nПроверяем метод searchEmployeeAverageSalary");
-//        System.out.println(employeeBook1.searchEmployeeAverageSalary());
-//        System.out.println("\nПроверяем метод printAllEmployeesFullNames");
-//        employeeBook1.printAllEmployeesFullNames();
-//        System.out.println("\nПроверяем метод indexingSalary");
-//        employeeBook1.indexingSalary(4);
-//        employeeBook1.printAllEmployeesInfo();
-//        System.out.println("\nПроверяем метод searchEmployeeDepMinSalary");
-//        employeeBook1.searchEmployeeDepMinSalary(1);
-//        System.out.println("\nПроверяем метод searchEmployeeDepMaxSalary");
-//        employeeBook1.searchEmployeeDepMaxSalary(1);
-//        System.out.println("\nПроверяем метод depMonthSalaryCosts");
-//        System.out.println(employeeBook1.depMonthSalaryCosts(1));
-//        System.out.println("\nПроверяем метод searchEmployeeDepAverageSalary");
-//        System.out.println(employeeBook1.searchEmployeeDepAverageSalary(1));
-//        System.out.println("\nПроверяем метод printAllDepEmployeesInfo");
-//        employeeBook1.printAllDepEmployeesInfo(1);
-//        System.out.println("\nПроверяем метод depIndexingSalary");
-//        employeeBook1.depIndexingSalary(4,1);
-//        employeeBook1.printAllDepEmployeesInfo(1);
-//        System.out.println("\nПроверяем метод printEmployeesSalaryLessThenNum");
-//        employeeBook1.printEmployeesSalaryLessThenNum(130000);
-//        System.out.println("\nПроверяем метод printEmployeesSalaryHigherThenNum");
-//        employeeBook1.printEmployeesSalaryHigherThenNum(60000);
+        System.out.println("\nПроверяем метод monthSalaryCosts");
+        System.out.println(employeeBook1.monthSalaryCosts());
+        System.out.println("\nПроверяем метод searchEmployeeMaxSalary");
+        employeeBook1.searchEmployeeMaxSalary();
+        System.out.println("\nПроверяем метод searchEmployeeMinSalary");
+        employeeBook1.searchEmployeeMinSalary();
+        System.out.println("\nПроверяем метод searchEmployeeAverageSalary");
+        System.out.println(employeeBook1.searchEmployeeAverageSalary());
+        System.out.println("\nПроверяем метод printAllEmployeesFullNames");
+        employeeBook1.printAllEmployeesFullNames();
+        System.out.println("\nПроверяем метод indexingSalary");
+        employeeBook1.indexingSalary(4);
+        employeeBook1.printAllEmployeesInfo();
+        System.out.println("\nПроверяем метод searchEmployeeDepMinSalary");
+        employeeBook1.searchEmployeeDepMinSalary(1);
+        System.out.println("\nПроверяем метод searchEmployeeDepMaxSalary");
+        employeeBook1.searchEmployeeDepMaxSalary(1);
+        System.out.println("\nПроверяем метод depMonthSalaryCosts");
+        System.out.println(employeeBook1.depMonthSalaryCosts(1));
+        System.out.println("\nПроверяем метод searchEmployeeDepAverageSalary");
+        System.out.println(employeeBook1.searchEmployeeDepAverageSalary(1));
+        System.out.println("\nПроверяем метод printAllDepEmployeesInfo");
+        employeeBook1.printAllDepEmployeesInfo(1);
+        System.out.println("\nПроверяем метод depIndexingSalary");
+        employeeBook1.depIndexingSalary(4,1);
+        employeeBook1.printAllDepEmployeesInfo(1);
+        System.out.println("\nПроверяем метод printEmployeesSalaryLessThenNum");
+        employeeBook1.printEmployeesSalaryLessThenNum(130000);
+        System.out.println("\nПроверяем метод printEmployeesSalaryHigherThenNum");
+        employeeBook1.printEmployeesSalaryHigherThenNum(60000);
 
     }
 }

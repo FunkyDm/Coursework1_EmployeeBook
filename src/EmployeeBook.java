@@ -1,14 +1,3 @@
-//Привести структуру проекта к ООП.
-//Создать класс EmployeeBook;
-//Перенести массив с сотрудниками в класс EmployeeBook, закрыть к нему доступ извне (сделать приватным);
-//Все статические методы по работе с массивом перенести в этот класс и сделать не статическими;
-//Добавить методы для управления внутренним массивом в EmployeeBook:
-//Добавить нового сотрудника. (метод должен найти свободную ячейку в массиве и положить нового сотрудника в нее.
-// Поиск свободных ячеек происходит с начала массива. Если свободных мест для сотрудника нет, то метод должен вернуть false,
-// если для сотрудника нашлось место, то метод должен вернуть true)
-//Удалить сотрудника (находим сотрудника по id, нуллим его ячейку в массиве);
-//Добавить метод для получения сотрудника по id
-//Инициализировать в методе main EmployeeBook и проверить корректность работы методов
 public class EmployeeBook {
     private Employee[] employees;
 
@@ -37,18 +26,19 @@ public class EmployeeBook {
     }
 
     public void removeEmployee(int id) {
-        for (int i = id - 1; i < employees.length; i++) {
-            if (employees[i].getEmployeeId() == id) {
-                employees[i] = null;
+        for(int i = 0; i < findEmployeeAmount(); i++){
+            if(employees[i].getEmployeeId() == id){
+                System.arraycopy(employees, i + 1, employees, i, findEmployeeAmount() - i - 1);
+                employees[i].reduceIdByOne();
+                employees[findEmployeeAmount() - 1] = null;
             }
         }
-        //throw new RuntimeException("Работника с id " + id + " не существует.");
     }
 
     public Employee getEmployeeById(int id) {
-        for (Employee employee : employees) {
-            if (employee.getEmployeeId() == id) {
-                return employee;
+        for (int i = 0; i < findEmployeeAmount(); i++) {
+            if (employees[i].getEmployeeId() == id) {
+                return employees[i];
             }
         }
         throw new RuntimeException("Работника с таким id не существует.");
