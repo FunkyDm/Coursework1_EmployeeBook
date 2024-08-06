@@ -29,3 +29,5 @@ bin/
 .DS_Store
 /Coursework1.iml
 /.idea/
+/hs_err_pid20880.log
+/hs_err_pid27940.log

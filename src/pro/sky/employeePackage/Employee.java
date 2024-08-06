@@ -1,3 +1,5 @@
+package pro.sky.employeePackage;
+
 public class Employee {
 
     private final String employeeName;
@@ -6,15 +8,16 @@ public class Employee {
 
     private double employeeSalary;
 
-    public static int idCounter = 1;
+    public static int idCounter = 0;
 
-    private final int employeeId;
+    private int employeeId;
 
     public Employee(String employeeName, int employeeDepartment, int employeeSalary) {
         this.employeeName = employeeName;
         this.employeeDepartment = employeeDepartment;
         this.employeeSalary = employeeSalary;
-        this.employeeId = idCounter++;
+        idCounter++;
+        this.employeeId = idCounter;
     }
 
     public String getEmployeeName() {
@@ -47,6 +50,10 @@ public class Employee {
             return;
         }
         this.employeeSalary = employeeSalary;
+    }
+
+    public void reduceIdByOne(){
+        idCounter--;
     }
 
     @Override
