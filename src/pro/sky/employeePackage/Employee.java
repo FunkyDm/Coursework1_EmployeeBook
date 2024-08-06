@@ -1,3 +1,5 @@
+package pro.sky.employeePackage;
+
 public class Employee {
 
     private final String employeeName;
